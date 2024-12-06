@@ -1,0 +1,15 @@
+{
+  "mappings" : {
+    "dynamic_templates": [
+      {
+        "date_as_dates": {
+          "match_mapping_type": "date",
+          "match": "*date*",
+          "mapping": {
+                "type": "date"
+            }
+        }
+      }
+    ]
+  }
+}

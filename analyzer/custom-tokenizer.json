@@ -1,0 +1,31 @@
+#PUT /es
+{
+  "settings" : {
+    "analysis": {
+      "tokenizer": {
+        "custom_tokenizer": {
+          "type":"pattern",
+          "pattern": "\\W+"
+        }
+      },
+      "filter": {
+        "custom_stopwords_filter": {
+          "type": "stop",
+          "stopwords": ["ve", "ama", "çünkü"]
+        },
+        "custom_stemmer_filter": {
+          "type":"stemmer",
+          "name": "turkish"
+        }
+
+      },
+      "analyzer": {
+        "custom_analyzer": {
+          "type":"custom",
+          "tokenizer": "custom_tokenizer",
+          "filter": ["lowercase", "custom_stopwords_filter", "custom_stemmer_filter"]
+        }
+      }
+    }
+  }
+}

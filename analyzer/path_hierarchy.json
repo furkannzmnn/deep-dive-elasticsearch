@@ -1,0 +1,92 @@
+# POST /_analyze
+{
+  "tokenizer": {
+    "type": "path_hierarchy",
+    "delimiter": "/"
+  },
+    "text": "Araba/Toyota/Corolla/2019/1.6/dizel/otomatik"
+}
+
+
+# Response
+{
+  "tokens" : [
+    {
+      "token" : "Araba",
+      "start_offset" : 0,
+      "end_offset" : 5,
+      "type" : "word",
+      "position" : 0
+    },
+    {
+      "token" : "Araba/Toyota",
+      "start_offset" : 0,
+      "end_offset" : 12,
+      "type" : "word",
+      "position" : 0
+    },
+    {
+      "token" : "Araba/Toyota/Corolla",
+      "start_offset" : 0,
+      "end_offset" : 20,
+      "type" : "word",
+      "position" : 0
+    },
+    {
+      "token" : "Araba/Toyota/Corolla/2019",
+      "start_offset" : 0,
+      "end_offset" : 25,
+      "type" : "word",
+      "position" : 0
+    },
+    {
+      "token" : "Araba/Toyota/Corolla/2019/1.6",
+      "start_offset" : 0,
+      "end_offset" : 29,
+      "type" : "word",
+      "position" : 0
+    },
+    {
+      "token" : "Araba/Toyota/Corolla/2019/1.6/dizel",
+      "start_offset" : 0,
+      "end_offset" : 35,
+      "type" : "word",
+      "position" : 0
+    },
+    {
+      "token" : "Araba/Toyota/Corolla/2019/1.6/dizel/otomatik",
+      "start_offset" : 0,
+      "end_offset" : 44,
+      "type" : "word",
+      "position" : 0
+    }
+  ]
+}
+
+
+# Create Mapping
+
+PUT /tutorials/_settings
+{
+"analysis": {
+"analyzer": {
+"path_hierarchy_analyzer": {
+"tokenizer":"path_hierarchy_tokenizer"
+}
+},
+"tokenizer": {
+"path_hierarchy_tokenizer":{
+"type":"path_hierarchy",
+"delimeter":"/"
+}
+}
+},
+"mappings": {
+"properties": {
+"name": {
+"type": "text",
+"analyzer": "path_hierarchy_analyzer"
+}
+}
+}
+}

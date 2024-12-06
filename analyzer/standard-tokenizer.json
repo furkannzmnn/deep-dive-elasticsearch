@@ -1,5 +1,54 @@
+#GET /_analyze
 
 {
-  "tokenizer": "standart",
+  "tokenizer": "standard",
   "text": ["FURKAN ÖZMEN X ADLI  FİRMADAN ÇALIŞIYOR"]
+}
+
+#response
+{
+  "tokens" : [
+    {
+      "token" : "FURKAN",
+      "start_offset" : 0,
+      "end_offset" : 6,
+      "type" : "<ALPHANUM>",
+      "position" : 0
+    },
+    {
+      "token" : "ÖZMEN",
+      "start_offset" : 7,
+      "end_offset" : 12,
+      "type" : "<ALPHANUM>",
+      "position" : 1
+    },
+    {
+      "token" : "X",
+      "start_offset" : 13,
+      "end_offset" : 14,
+      "type" : "<ALPHANUM>",
+      "position" : 2
+    },
+    {
+      "token" : "ADLI",
+      "start_offset" : 15,
+      "end_offset" : 19,
+      "type" : "<ALPHANUM>",
+      "position" : 3
+    },
+    {
+      "token" : "FİRMADAN",
+      "start_offset" : 21,
+      "end_offset" : 29,
+      "type" : "<ALPHANUM>",
+      "position" : 4
+    },
+    {
+      "token" : "ÇALIŞIYOR",
+      "start_offset" : 30,
+      "end_offset" : 39,
+      "type" : "<ALPHANUM>",
+      "position" : 5
+    }
+  ]
 }

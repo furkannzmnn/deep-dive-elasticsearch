@@ -1,0 +1,61 @@
+# POST /_analyze
+
+{
+  "tokenizer": {
+    "type": "edge_ngram",
+    "min_gram": 10,
+    "max_gram": 15
+  },
+  "text": [
+    "Furkan Özmen yazılım mühendisi"
+  ]
+}
+
+
+# Response
+{
+  "tokens" : [
+    {
+      "token" : "Furkan Özm",
+      "start_offset" : 0,
+      "end_offset" : 10,
+      "type" : "word",
+      "position" : 0
+    },
+    {
+      "token" : "Furkan Özme",
+      "start_offset" : 0,
+      "end_offset" : 11,
+      "type" : "word",
+      "position" : 1
+    },
+    {
+      "token" : "Furkan Özmen",
+      "start_offset" : 0,
+      "end_offset" : 12,
+      "type" : "word",
+      "position" : 2
+    },
+    {
+      "token" : "Furkan Özmen ",
+      "start_offset" : 0,
+      "end_offset" : 13,
+      "type" : "word",
+      "position" : 3
+    },
+    {
+      "token" : "Furkan Özmen y",
+      "start_offset" : 0,
+      "end_offset" : 14,
+      "type" : "word",
+      "position" : 4
+    },
+    {
+      "token" : "Furkan Özmen ya",
+      "start_offset" : 0,
+      "end_offset" : 15,
+      "type" : "word",
+      "position" : 5
+    }
+  ]
+}
