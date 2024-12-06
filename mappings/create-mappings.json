@@ -1,0 +1,22 @@
+{
+  "mappings": {
+    "properties": {
+      "name": {"type": "text"},
+      "age": {"type": "integer"},
+      "birth_date": {"type": "date"},
+      "location": {"type": "geo_point"}
+    }
+  }
+}
+
+
+{
+  "mappings": {
+    "properties": {
+      "name": { "type": "text" },
+      "age": { "type": "integer" },
+      "birth_date": { "type": "date" },
+      "location": { "type": "geo_point" }
+    }
+  }
+}
